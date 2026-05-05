@@ -1,0 +1,84 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Drift Parts</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="/stylesheets/basic.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body class="background">
+
+    <%- include("./navbar.ejs") %>    
+    <div class="page-wrap">
+        <div class="flex-grow-1 d-flex align-items-center">
+            <div class="container card settingsform">
+                <div class="card-body">
+                    <h5 class="card-title text-center">Register</h5>
+                    <form id="signupForm" action="/register" method="POST" onsubmit="return validateForm()">
+                        <div class="form-group my-3">
+                            <label for="email">Email</label>
+                            <input type="text" class="form-control" id="email" name="email" placeholder="Email" required>
+                        </div>
+                        <% if(typeof error !== 'undefined' && error!= null){%>
+                        <div id="email_error" class="text-danger mt-2"><%= error %></div>
+                        <%}%>
+                        <div class="form-group my-3">
+                            <label for="username">Username</label>
+                            <input type="text" class="form-control" id="username" name="username" placeholder="Username" required>
+                        </div>
+                        <div class="form-group my-3">
+                            <label for="address">Address</label>
+                            <input type="text" class="form-control" id="address" name="address" placeholder="Address" required>
+                        </div>
+                        <div class="form-group  my-3">
+                            <label for="password">Password</label>
+                            <input type="password" class="form-control" id="password" name="password" placeholder="Password" required>
+                        </div>
+                        <div class="form-group my-3">
+                            <label for="confirm">Confirm password</label>
+                            <input type="password" class="form-control" id="confirm" name="confirm" placeholder="Confirm Password" required>
+                        </div>
+                        <div class="container justify-content-center butpos">
+                            <input type="submit" class="btn btn-dark btn-block " value="Submit">
+                        </div>
+                        <div id="password_error" class="text-danger mt-2"></div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <footer class="footer footer-style mt-auto">
+            <div class="container">
+                <div class="row text-center">
+                    <div class="col-md-4">
+                        <h5>Free Shipping</h5>
+                        <p><i class="fas fa-truck"></i> Free shipping on all orders</p>
+                    </div>
+                    <div class="col-md-4">
+                        <h5>Contacts</h5>
+                        <p><i class="fas fa-phone"></i> Call us: +39 0322 758 9970</p>
+                        <p><i class="fas fa-envelope"></i> Email us: driftparts@gmail.com</p>
+                    </div>
+                    <div class="col-md-4">
+                        <h5>30 Days Returns</h5>
+                        <p><i class="fas fa-undo"></i> Easy returns within 30 days</p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+    <script src="/javascripts/validate.js"></script>
+
+</body>
+
+</html>

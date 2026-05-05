@@ -1,0 +1,113 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Drift Parts</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="/stylesheets/basic.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body class="background">
+    <%- include("./navbar.ejs") %>    
+    <div class="page-wrap">
+    <div class="container flex-grow-1 d-flex flex-column justify-content-center align-items-center mt-3">
+        <div class="card profileinfo-card">
+            <div class="card-body text-center">
+                <div class="profile-icon mb-4">
+                    <i class="fas fa-user-circle text-purple" style="font-size: 4rem;"></i>
+                </div>
+                <h5>username</h5>
+                <h5>email</h5>
+                <h5>address</h5>
+                <button class="btn btn-primary mt-4">Edit Profile</button>
+            </div>
+        </div>
+
+        <div class="container orders my-3">
+            <h2 class="mb-3">Your Orders</h2>
+            <div class="container orders-scroll">
+                <div class="card mb-3">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <img src="images/jp race.jpg" class="card-img" alt="auto">
+                        </div>
+                        <div class="col-md-9">
+                            <div class="card-body">
+                                <p class="card-text"><small class="text-muted">Order Date: January 1, 2024</small></p>
+                                <h5 class="card-title">Product Name</h5>
+                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
+                                    aliquet nisl eros, vitae finibus elit placerat non. Nam vel velit vitae erat posuere
+                                    scelerisque sit amet ut risus.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card mb-3">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <img src="images/hks coilovers.webp" class="card-img" alt="auto">
+                        </div>
+                        <div class="col-md-9">
+                            <div class="card-body">
+                                <p class="card-text"><small class="text-muted">Order Date: January 1, 2024</small></p>
+                                <h5 class="card-title">Product Name</h5>
+                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
+                                    aliquet nisl eros, vitae finibus elit placerat non. Nam vel velit vitae erat posuere
+                                    scelerisque sit amet ut risus.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="card mb-3">
+                    <div class="row">
+                        <div class="col-md-3">
+                            <img src="images/jp race.jpg" class="card-img" alt="auto">
+                        </div>
+                        <div class="col-md-9">
+                            <div class="card-body">
+                                <p class="card-text"><small class="text-muted">Order Date: January 1, 2024</small></p>
+                                <h5 class="card-title">Product Name</h5>
+                                <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
+                                    aliquet nisl eros, vitae finibus elit placerat non. Nam vel velit vitae erat posuere
+                                    scelerisque sit amet ut risus.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer footer-style">
+        <div class="container">
+            <div class="row text-center">
+                <div class="col-md-4">
+                    <h5>Free Shipping</h5>
+                    <p><i class="fas fa-truck"></i> Free shipping on all orders</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>Contacts</h5>
+                    <p><i class="fas fa-phone"></i> Call us: +39 0322 758 9970</p>
+                    <p><i class="fas fa-envelope"></i> Email us: driftparts@gmail.com</p>
+                </div>
+                <div class="col-md-4">
+                    <h5>30 Days Returns</h5>
+                    <p><i class="fas fa-undo"></i> Easy returns within 30 days</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+
+</body>
+
+</html>
