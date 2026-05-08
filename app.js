@@ -4,13 +4,18 @@ const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 
-const passport = require("passport");
-const LocalStrategy = require("passport-local").Strategy;
-const bcrypt = require("bcrypt");
-const DataBase = require("./models/db");
-const sqlite3 = require('sqlite3').verbose();
-const db = new sqlite3.Database(':memory:');
+const passport = require('passport');
+const LocalStrategy = require('passport-local').Strategy;
+
+// usa bcryptjs
+const bcrypt = require('bcryptjs');
+
 const session = require('express-session');
+
+const DataBase = require('./models/db');
+
+// CREA IL DATABASE CUSTOM
+const db = new DataBase();
 
 const indexRouter = require('./routes/index');
 const entryRouter = require('./routes/entry');
@@ -18,12 +23,12 @@ const profileRouter = require('./routes/profile');
 const registerRouter = require('./routes/register');
 const articlePageRouter = require('./routes/articlePage');
 const usersRouter = require('./routes/users');
-const articleVisualRouter=require('./routes/articleVisual');
+const articleVisualRouter = require('./routes/articleVisual');
 const loginRouter = require('./routes/login');
+const navbarRouter = require('./routes/navbar');
 
 const app = express();
 const port = 3000;
-
 // configure session
 app.use(session({
   secret: 'bmw',
@@ -37,7 +42,7 @@ app.use(passport.session());
 
 //transform session
 app.use(function (req, res, next) {
-  res.locals.user = req.session.user;
+  res.locals.user = req.user;
   next();
 });
 
@@ -52,6 +57,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
+app.use('/navbar', navbarRouter);
 app.use('/entry', entryRouter);
 app.use('/profile', profileRouter);
 app.use('/articlePage', articlePageRouter);
@@ -69,7 +75,7 @@ passport.use(new LocalStrategy({
       const user = await db.findUserByEmail(email);
       if (!user) return done(null, false);
 
-      bcrypt.compare(password, user.password, function (err, result) {
+      bcrypt.compare(password, user.Password, function (err, result) {
           if (err) return done(err);
           if (result) return done(null, user);
           else return done(null, false);
@@ -80,19 +86,24 @@ passport.use(new LocalStrategy({
   }
 }));
 
-passport.serializeUser(function (user, done) {
-  done(null, user.email);
+passport.serializeUser((user, done) => {
+  done(null, user.Email);
 });
 
-passport.deserializeUser(async function (email, done) {
+passport.deserializeUser(async (email, done) => {
+
   try {
-      const user = await db.findUserByEmail(email);
-      user.id = user.ID;
-      done(null, user);
+
+    const user = await db.findUserByEmail(email);
+
+    done(null, user);
+
   } catch (err) {
-      console.error("Error finding user by email:", err);
-      done(err);
+
+    done(err);
+
   }
+
 });
 
 // catch 404 and forward to error handler

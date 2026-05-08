@@ -3,7 +3,7 @@ const router = express.Router();
 const DataBase = require("../models/db");
 const db = new DataBase();
 const passport = require("passport");
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 
 router.get("/", (req, res) => {
     const { alert } = req.query;
