@@ -6,19 +6,26 @@ const passport = require("passport");
 const bcrypt = require("bcryptjs");
 
 router.get("/", (req, res) => {
+    if (req.isAuthenticated()) {
+        return res.redirect("/");
+    }
     const { alert } = req.query;
     let message = '';
     if (alert === "accessdenyed") {
         message = "you must be an admin to run this page.";
     } else if (alert === "error") {
         message = "wrong username or password";
-    } else if (!message && alert) {
+    } else if (alert) {
         message = "login to access the cart";
     }
     res.render("login", { message });
 });
 
 router.post("/", (req, res, next) => {
+    if (req.isAuthenticated()) {
+        return res.redirect("/");
+    }
+    console.log(req.body);
     passport.authenticate("local", (err, user, info) => {
         if (err) {
             console.error("Error during authentication:", err);

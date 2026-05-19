@@ -1,76 +1,137 @@
-<nav class="navbar sticky-top navbar-dark bg-dark">
+<nav class="navbar sticky-top navbar-dark bg-dark shadow">
+
     <div class="container">
 
+        <!-- LOGO -->
         <a class="navbar-brand" href="/">
             <img src="/images/Drift_Parts.png" alt="Logo Drift Parts" width="200" height="50">
         </a>
 
-        <form class="d-flex justify-content-center" role="search">
-            <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success" type="submit">Search</button>
+        <!-- SEARCH -->
+        <form class="d-flex justify-content-center" role="search" method="GET" action="/articlePage">
+
+            <input class="form-control me-2" type="search" name="search" placeholder="Search products..."
+                aria-label="Search">
+
+            <button class="btn btn-outline-success" type="submit">
+                Search
+            </button>
+
         </form>
 
-        <button class="profile-button btn btn-outline-light"
-                onclick="window.location.href='/login'">
-            <i class="fas fa-user"></i> Login
-        </button>
+        <!-- LOGIN -->
+        <% if (!user) { %>
 
-        <button class="cart-button btn btn-outline-light"
-                onclick="window.location.href='/cart'">
-            <i class="fas fa-shopping-cart"></i> Cart
-        </button>
+            <!-- LOGIN -->
+            <button class="profile-button btn btn-outline-light ms-2" onclick="window.location.href='/login'">
 
-        <button class="navbar-toggler" type="button"
-                data-bs-toggle="offcanvas"
-                data-bs-target="#offcanvasDarkNavbar"
-                aria-controls="offcanvasDarkNavbar"
-                aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
+                <i class="fas fa-user"></i>
+                Login
 
-        <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar">
+            </button>
 
-            <div class="offcanvas-header">
-                <h5 class="offcanvas-title">Categories</h5>
-                <button type="button" class="btn-close btn-close-white"
-                        data-bs-dismiss="offcanvas"></button>
-            </div>
+            <% } else { %>
 
-            <div class="offcanvas-body">
+                <!-- PROFILE -->
+                <button class="profile-button btn btn-outline-light ms-2" onclick="window.location.href='/profile'">
 
-                <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                    <i class="fas fa-user"></i>
+                    <%= user.Username %>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="/coilovers">Coilovers</a>
-                    </li>
+                </button>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="/engine-oil">Engine Oil</a>
-                    </li>
+                <!-- LOGOUT -->
+                <button class="btn btn-danger ms-2" onclick="window.location.href='/logout'">
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="/rims">Rims</a>
-                    </li>
+                    Logout
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="/race-seats">Race Seats</a>
-                    </li>
+                </button>
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="/hydraulic-handbrakes">Hydraulic handbrakes</a>
-                    </li>
+                <% } %>
+                    <!-- CART -->
+                    <button class="cart-button btn btn-outline-light ms-2" onclick="window.location.href='/cart'">
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="/steering-wheels">Steering wheels</a>
-                    </li>
+                        <i class="fas fa-shopping-cart"></i>
+                        Cart
 
-                    <li class="nav-item">
-                        <a class="nav-link" href="/differentials">Differentials</a>
-                    </li>
+                    </button>
 
-                </ul>
+                    <!-- TOGGLER -->
+                    <button class="navbar-toggler ms-2" type="button" data-bs-toggle="offcanvas"
+                        data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
 
-            </div>
-        </div>
+                        <span class="navbar-toggler-icon"></span>
+
+                    </button>
+
+                    <!-- OFFCANVAS -->
+                    <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar">
+
+                        <!-- HEADER -->
+                        <div class="offcanvas-header">
+
+                            <h5 class="offcanvas-title">
+                                Categories
+                            </h5>
+
+                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas">
+                            </button>
+
+                        </div>
+
+                        <!-- BODY -->
+                        <div class="offcanvas-body">
+
+                            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/articlePage?category=COILOVERS">
+                                        Coilovers
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/articlePage?category=ENGINE OIL">
+                                        Engine Oil
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/articlePage?category=RIMS">
+                                        Rims
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/articlePage?category=RACE SEATS">
+                                        Race Seats
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/articlePage?category=HYDRAULIC HANDBRAKES">
+                                        Hydraulic Handbrakes
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/articlePage?category=STEERING WHEELS">
+                                        Steering Wheels
+                                    </a>
+                                </li>
+
+                                <li class="nav-item">
+                                    <a class="nav-link" href="/articlePage?category=DIFFERENTIALS">
+                                        Differentials
+                                    </a>
+                                </li>
+
+                            </ul>
+
+                        </div>
+
+                    </div>
+
     </div>
+
 </nav>

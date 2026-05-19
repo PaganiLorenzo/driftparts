@@ -34,8 +34,28 @@ class DataBase {
         });
     }
 
+    findUserById(id) {
+
+        const sql = `SELECT * FROM User WHERE ID = ?`;
+
+        return new Promise((resolve, reject) => {
+
+            this.db.get(sql, [id], (err, row) => {
+
+                if (err) {
+                    reject(err);
+                } else {
+                    resolve(row);
+                }
+
+            });
+
+        });
+
+    }
+
     findUserByEmail(email) {
-        let sql = `SELECT * FROM User WHERE email = ?`;
+        let sql = `SELECT * FROM User WHERE Email = ?`;
         const params = [email];
         return new Promise((resolve, reject) => {
             this.db.get(sql, params, (err, row) => {
@@ -57,6 +77,32 @@ class DataBase {
             }
         });
     }
+
+    findProductssByCategory(category) {
+
+        const sql = `
+        SELECT *
+        FROM Product
+        WHERE Category = ?
+    `;
+
+        return new Promise((resolve, reject) => {
+
+            this.db.all(sql, [category], (err, rows) => {
+
+                if (err) {
+                    reject(err);
+                } else {
+                    resolve(rows);
+                }
+
+            });
+
+        });
+
+    }
 }
+
+
 
 module.exports = DataBase;
