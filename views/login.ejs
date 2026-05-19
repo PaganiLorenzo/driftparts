@@ -12,67 +12,74 @@
 </head>
 
 <body class="background">
-        <% if (user) { %>
-    <script>
-        window.location.href = "/";
-    </script>
-<% } %>
-    <%- include("./navbar.ejs") %>
-        <div class="page-wrap">
-            <div class="flex-grow-1 d-flex align-items-center">
-                <div class="container card settingsform">
-                    <div class="card-body">
-                        <h5 class="card-title text-center">Login</h5>
-                        <form action="/login" method="POST">
+    <% if (user) { %>
+        <script>
+            window.location.href = "/";
+        </script>
+        <% } %>
+            <%- include("./navbar.ejs") %>
+                <div class="page-wrap">
+                    <div class="flex-grow-1 d-flex align-items-center">
+                        <div class="container card settingsform">
+                            <div class="card-body">
+                                <h5 class="card-title text-center">Login</h5>
+                                <form action="/login" method="POST">
 
-                            <div class="form-group my-3">
-                                <label for="email">E-mail</label>
+                                    <div class="form-group my-3">
+                                        <label for="email">E-mail</label>
 
-                                <input type="text" class="form-control" id="email" name="email" placeholder="Email"
-                                    required>
+                                        <input type="text" class="form-control" id="email" name="email"
+                                            placeholder="Email" required>
+                                    </div>
+
+                                    <div class="form-group my-3">
+                                        <label for="password">Password</label>
+
+                                        <input type="password" class="form-control" id="password" name="password"
+                                            placeholder="Password" required>
+                                    </div>
+
+                                    <button type="submit" class="btn btn-dark">
+                                        Submit
+                                    </button>
+                                    <div class="text-center mt-3">
+                                        <p class="mb-0" style="color: #4b0082;">
+                                            Don't have an account?
+                                            <a href="/register" class="text-primary">
+                                                Register here
+                                            </a>
+                                        </p>
+                                    </div>
+                                </form>
                             </div>
-
-                            <div class="form-group my-3">
-                                <label for="password">Password</label>
-
-                                <input type="password" class="form-control" id="password" name="password"
-                                    placeholder="Password" required>
-                            </div>
-
-                            <button type="submit" class="btn btn-dark">
-                                Submit
-                            </button>
-
-                        </form>
-                    </div>
-                </div>
-            </div>
-
-            <footer class="footer footer-style mt-auto">
-                <div class="container">
-                    <div class="row text-center">
-                        <div class="col-md-4">
-                            <h5>Free Shipping</h5>
-                            <p><i class="fas fa-truck"></i> Free shipping on all orders</p>
-                        </div>
-                        <div class="col-md-4">
-                            <h5>Contacts</h5>
-                            <p><i class="fas fa-phone"></i> Call us: +39 0322 758 9970</p>
-                            <p><i class="fas fa-envelope"></i> Email us: driftparts@gmail.com</p>
-                        </div>
-                        <div class="col-md-4">
-                            <h5>30 Days Returns</h5>
-                            <p><i class="fas fa-undo"></i> Easy returns within 30 days</p>
                         </div>
                     </div>
-                </div>
-            </footer>
-        </div>
 
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
-            integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
-            crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
+                    <footer class="footer footer-style mt-auto">
+                        <div class="container">
+                            <div class="row text-center">
+                                <div class="col-md-4">
+                                    <h5>Free Shipping</h5>
+                                    <p><i class="fas fa-truck"></i> Free shipping on all orders</p>
+                                </div>
+                                <div class="col-md-4">
+                                    <h5>Contacts</h5>
+                                    <p><i class="fas fa-phone"></i> Call us: +39 0322 758 9970</p>
+                                    <p><i class="fas fa-envelope"></i> Email us: driftparts@gmail.com</p>
+                                </div>
+                                <div class="col-md-4">
+                                    <h5>30 Days Returns</h5>
+                                    <p><i class="fas fa-undo"></i> Easy returns within 30 days</p>
+                                </div>
+                            </div>
+                        </div>
+                    </footer>
+                </div>
+
+                <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+                    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+                    crossorigin="anonymous"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/js/all.min.js"></script>
 
 </body>
 
