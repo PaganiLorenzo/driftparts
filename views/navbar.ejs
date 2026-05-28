@@ -49,88 +49,103 @@
 
                 <% } %>
                     <!-- CART -->
-                    <button class="cart-button btn btn-outline-light ms-2" onclick="window.location.href='/cart'">
+                    <% if (user) { %>
 
-                        <i class="fas fa-shopping-cart"></i>
-                        Cart
+                        <button class="cart-button btn btn-outline-light ms-2" onclick="window.location.href='/cart'">
 
-                    </button>
+                            <i class="fas fa-shopping-cart"></i>
+                            Cart
 
-                    <!-- TOGGLER -->
-                    <button class="navbar-toggler ms-2" type="button" data-bs-toggle="offcanvas"
-                        data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
+                        </button>
 
-                        <span class="navbar-toggler-icon"></span>
+                        <% } else { %>
 
-                    </button>
+                            <button class="cart-button btn btn-outline-light ms-2"
+                                onclick="window.location.href='/login'">
 
-                    <!-- OFFCANVAS -->
-                    <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1" id="offcanvasDarkNavbar">
+                                <i class="fas fa-shopping-cart"></i>
+                                Cart
 
-                        <!-- HEADER -->
-                        <div class="offcanvas-header">
-
-                            <h5 class="offcanvas-title">
-                                Categories
-                            </h5>
-
-                            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas">
                             </button>
 
-                        </div>
+                            <% } %>
+                                <!-- TOGGLER -->
+                                <button class="navbar-toggler ms-2" type="button" data-bs-toggle="offcanvas"
+                                    data-bs-target="#offcanvasDarkNavbar" aria-controls="offcanvasDarkNavbar">
 
-                        <!-- BODY -->
-                        <div class="offcanvas-body">
+                                    <span class="navbar-toggler-icon"></span>
 
-                            <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
+                                </button>
 
-                                <li class="nav-item">
-                                    <a class="nav-link" href="/articlePage?category=COILOVERS">
-                                        Coilovers
-                                    </a>
-                                </li>
+                                <!-- OFFCANVAS -->
+                                <div class="offcanvas offcanvas-end text-bg-dark" tabindex="-1"
+                                    id="offcanvasDarkNavbar">
 
-                                <li class="nav-item">
-                                    <a class="nav-link" href="/articlePage?category=ENGINE OIL">
-                                        Engine Oil
-                                    </a>
-                                </li>
+                                    <!-- HEADER -->
+                                    <div class="offcanvas-header">
 
-                                <li class="nav-item">
-                                    <a class="nav-link" href="/articlePage?category=RIMS">
-                                        Rims
-                                    </a>
-                                </li>
+                                        <h5 class="offcanvas-title">
+                                            Categories
+                                        </h5>
 
-                                <li class="nav-item">
-                                    <a class="nav-link" href="/articlePage?category=RACE SEATS">
-                                        Race Seats
-                                    </a>
-                                </li>
+                                        <button type="button" class="btn-close btn-close-white"
+                                            data-bs-dismiss="offcanvas">
+                                        </button>
 
-                                <li class="nav-item">
-                                    <a class="nav-link" href="/articlePage?category=HYDRAULIC HANDBRAKES">
-                                        Hydraulic Handbrakes
-                                    </a>
-                                </li>
+                                    </div>
 
-                                <li class="nav-item">
-                                    <a class="nav-link" href="/articlePage?category=STEERING WHEELS">
-                                        Steering Wheels
-                                    </a>
-                                </li>
+                                    <!-- BODY -->
+                                    <div class="offcanvas-body">
 
-                                <li class="nav-item">
-                                    <a class="nav-link" href="/articlePage?category=DIFFERENTIALS">
-                                        Differentials
-                                    </a>
-                                </li>
+                                        <ul class="navbar-nav justify-content-end flex-grow-1 pe-3">
 
-                            </ul>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="/articlePage?category=COILOVERS">
+                                                    Coilovers
+                                                </a>
+                                            </li>
 
-                        </div>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="/articlePage?category=ENGINE OIL">
+                                                    Engine Oil
+                                                </a>
+                                            </li>
 
-                    </div>
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="/articlePage?category=RIMS">
+                                                    Rims
+                                                </a>
+                                            </li>
+
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="/articlePage?category=RACE SEATS">
+                                                    Race Seats
+                                                </a>
+                                            </li>
+
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="/articlePage?category=HYDRAULIC HANDBRAKES">
+                                                    Hydraulic Handbrakes
+                                                </a>
+                                            </li>
+
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="/articlePage?category=STEERING WHEELS">
+                                                    Steering Wheels
+                                                </a>
+                                            </li>
+
+                                            <li class="nav-item">
+                                                <a class="nav-link" href="/articlePage?category=DIFFERENTIALS">
+                                                    Differentials
+                                                </a>
+                                            </li>
+
+                                        </ul>
+
+                                    </div>
+
+                                </div>
 
     </div>
 

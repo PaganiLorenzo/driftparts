@@ -16,33 +16,4 @@ router.get('/cart', (req, res) => {
     res.render('cart');
 });
 
-// Categories
-router.get('/coilovers', (req, res) => {
-    res.render('articlePage');
-});
-
-router.get('/engine-oil', (req, res) => {
-    res.render('articlePage');
-});
-
-router.get('/rims', (req, res) => {
-    res.render('articlePage');
-});
-
-router.get('/race-seats', (req, res) => {
-    res.render('articlePage');
-});
-
-router.get('/hydraulic-handbrakes', (req, res) => {
-    res.render('articlePage');
-});
-
-router.get('/steering-wheels', (req, res) => {
-    res.render('articlePage');
-});
-
-router.get('/differentials', (req, res) => {
-    res.render('articlePage');
-});
-
 module.exports = router;

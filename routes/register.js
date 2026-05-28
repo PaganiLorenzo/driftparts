@@ -26,7 +26,7 @@ router.post("/", async (req, res) => {
             );
         else
             req.session.error = 'email already in use';
-        return res.redirect("/register");
+        return res.redirect("/");
     } catch (error) {
         console.log("Error while registering: ", error);
         req.session.error = 'unknown error'

@@ -1,0 +1,21 @@
+CREATE TABLE IF NOT EXISTS Cart (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    user_id INTEGER NOT NULL UNIQUE,
+    created_at DATETIME DEFAULT CURRENT_TIMESTAMP,
+    FOREIGN KEY(user_id) REFERENCES User(ID)
+);
+
+CREATE TABLE IF NOT EXISTS CartItems (
+    id INTEGER PRIMARY KEY AUTOINCREMENT,
+    cart_id INTEGER NOT NULL,
+    product_id INTEGER NOT NULL,
+    quantity INTEGER DEFAULT 1,
+
+    FOREIGN KEY(cart_id) REFERENCES Cart(id),
+    FOREIGN KEY(product_id) REFERENCES Product(ID),
+
+    UNIQUE(cart_id, product_id)
+);
+
+PRAGMA foreign_keys = ON;
+ALTER TABLE User ADD COLUMN Cart TEXT;

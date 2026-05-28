@@ -15,28 +15,50 @@
     <%- include("./navbar.ejs") %>
     <div class="page-wrap">
         <div class="container my-4">
-            <div id="carouselSlidesOnly" class="carousel slide" data-bs-ride="carousel">
-                <div class="carousel-inner">
-                    <div class="carousel-item active">
-                        <img src="images/e46.jpg" class="d-block w-100" alt="...">
-                        <div class="carousel-caption">Our parts for BMW e46</div>
-                    </div>
-                    <div class="carousel-item">
-                        <img src="images/silvia s13.jpg" class="d-block w-100" alt="...">
-                        <div class="carousel-caption">Our parts for Silvia s13</div>
-                    </div>
-                </div>
-                <button class="carousel-control-prev" type="button" data-bs-target="#carouselSlidesOnly"
-                    data-bs-slide="prev">
-                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Previous</span>
-                </button>
-                <button class="carousel-control-next" type="button" data-bs-target="#carouselSlidesOnly"
-                    data-bs-slide="next">
-                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                    <span class="visually-hidden">Next</span>
-                </button>
+           <div id="carouselSlidesOnly" class="carousel slide" data-bs-ride="carousel">
+    <div class="carousel-inner">
+
+        <!-- E46 -->
+        <div class="carousel-item active">
+            
+            <a href="/articlePage?model=E46">
+                <img src="images/e46.jpg" class="d-block w-100" alt="BMW E46">
+            </a>
+
+            <div class="carousel-caption">
+                Our parts for BMW E46
             </div>
+
+        </div>
+
+        <!-- S13 -->
+        <div class="carousel-item">
+
+            <a href="/articlePage?model=S13">
+                <img src="images/silvia s13.jpg" class="d-block w-100" alt="Silvia S13">
+            </a>
+
+            <div class="carousel-caption">
+                Our parts for Silvia S13
+            </div>
+
+        </div>
+
+    </div>
+
+    <button class="carousel-control-prev" type="button" data-bs-target="#carouselSlidesOnly"
+        data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+    </button>
+
+    <button class="carousel-control-next" type="button" data-bs-target="#carouselSlidesOnly"
+        data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+    </button>
+
+</div>
         </div>
         <div class="container custom-container">
             <div class="row justify-content-center">

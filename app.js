@@ -26,6 +26,7 @@ const usersRouter = require('./routes/users');
 const articleVisualRouter = require('./routes/articleVisual');
 const loginRouter = require('./routes/login');
 const navbarRouter = require('./routes/navbar');
+const cartRouter = require('./routes/cart');
 
 const app = express();
 const port = 3000;
@@ -66,6 +67,7 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.json());
 
 app.use('/', indexRouter);
 app.use('/navbar', navbarRouter);
@@ -76,6 +78,7 @@ app.use('/register', registerRouter);
 app.use('/users', usersRouter);
 app.use('/articleVisual', articleVisualRouter);
 app.use('/login', loginRouter);
+app.use('/cart', cartRouter);
 
 app.get("/logout", (req, res, next) => {
     req.logout(function(err) {
